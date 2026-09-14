@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aeron | The Guardian Who Listens</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            AERON<span>✦</span>
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#story">Story</a>
+
+            <a href="#powers">Powers</a>
+
+            <a href="#mission">Mission</a>
+
+            <button onclick="openChat()">
+                Talk to Aeron
+            </button>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- HERO SECTION -->
+
+    <main class="hero">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                THE GUARDIAN WHO LISTENS
+            </p>
+
+            <h1>
+
+                Every voice
+
+                <span>
+                    deserves to be heard.
+                </span>
+
+            </h1>
+
+            <p class="hero-description">
+
+                When the world becomes too loud, Aeron listens.
+                Tell him what's happening, and let your voice be heard.
+
+            </p>
+
+            <button
+                class="hero-button"
+                onclick="openChat()">
+
+                Talk to Aeron →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- SUPERHERO -->
+
+        <div class="hero-character">
+
+            <div class="energy-ring ring-one"></div>
+
+            <div class="energy-ring ring-two"></div>
+
+
+            <!-- AERON CHARACTER -->
+
+            <div class="character">
+
+                <div class="aeron-body">
+
+                    <div class="aeron-head">
+
+                        <div class="aeron-eye left-eye"></div>
+
+                        <div class="aeron-eye right-eye"></div>
+
+                    </div>
+
+
+                    <div class="aeron-mask"></div>
+
+
+                    <div class="aeron-chest">
+
+                        <span>✦</span>
+
+                    </div>
+
+
+                    <div class="aeron-core"></div>
+
+
+                    <div class="aeron-arm left-arm"></div>
+
+                    <div class="aeron-arm right-arm"></div>
+
+
+                    <div class="aeron-energy"></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CHARACTER NAME -->
+
+            <div class="character-name">
+
+                <strong>AERON</strong>
+
+                <span>
+                    Guardian of Voices
+                </span>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- STORY -->
+
+    <section id="story" class="section">
+
+        <p class="section-label">
+            01 — ORIGIN
+        </p>
+
+        <h2>
+            The hero who learned to listen.
+        </h2>
+
+        <p>
+
+            Aeron was born with a mysterious ability called
+            <strong>EchoSense</strong>.
+
+            He can hear the emotions hidden behind people's
+            words and understand when someone truly needs help.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- POWERS -->
+
+    <section id="powers" class="section">
+
+        <p class="section-label">
+            02 — ABILITIES
+        </p>
+
+        <h2>
+            Powered by empathy.
+        </h2>
+
+
+        <div class="power-grid">
+
+
+            <div class="power-card">
+
+                <div class="power-icon">
+                    ◉
+                </div>
+
+                <h3>
+                    EchoSense
+                </h3>
+
+                <p>
+
+                    Detects the emotion and urgency hidden
+                    inside someone's words.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="power-card">
+
+                <div class="power-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    Deep Listening
+                </h3>
+
+                <p>
+
+                    Aeron never interrupts. Every story
+                    deserves his full attention.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="power-card">
+
+                <div class="power-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Rapid Response
+                </h3>
+
+                <p>
+
+                    When someone needs help, Aeron responds
+                    without hesitation.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MISSION -->
+
+    <section id="mission" class="mission">
+
+        <p class="section-label">
+            03 — MISSION
+        </p>
+
+        <h2>
+
+            "No voice should
+
+            <span>
+                ever go unheard.
+            </span>
+
+            "
+
+        </h2>
+
+
+        <button
+            class="hero-button"
+            onclick="openChat()">
+
+            I Need Help
+
+        </button>
+
+    </section>
+
+
+
+    <!-- CHATBOT -->
+
+    <div id="chat-overlay" class="chat-overlay">
+
+
+        <div class="chat-window">
+
+
+            <!-- CHAT HEADER -->
+
+            <div class="chat-header">
+
+                <div>
+
+                    <strong>
+                        🦸 AERON
+                    </strong>
+
+                    <small>
+                        Guardian of Voices • Online
+                    </small>
+
+                </div>
+
+
+                <button
+                    class="close-button"
+                    onclick="closeChat()">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+
+            <!-- CHAT MESSAGES -->
+
+            <div
+                id="chat-messages"
+                class="chat-messages">
+
+                <!-- Messages appear here -->
+
+            </div>
+
+
+
+            <!-- CHAT INPUT -->
+
+            <div class="chat-input-area">
+
+
+                <input
+                    type="text"
+                    id="chat-input"
+                    placeholder="Type your message..."
+                    onkeydown="handleKey(event)"
+                >
+
+
+                <button onclick="sendMessage()">
+
+                    ➤
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- EMAILJS -->
+
+    <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+
+    <script>
+
+        emailjs.init({
+            publicKey: "hGK3nHtmEnNO0tBTi"
+        });
+
+    </script>
+
+
+    <!-- OUR JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

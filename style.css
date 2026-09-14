@@ -1,0 +1,1287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050816;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 600px;
+    height: 600px;
+
+    background: #625cff;
+
+    opacity: 0.08;
+
+    filter: blur(140px);
+
+    border-radius: 50%;
+
+    top: -200px;
+    left: -200px;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    background: #00c8ff;
+
+    opacity: 0.06;
+
+    filter: blur(140px);
+
+    border-radius: 50%;
+
+    bottom: -200px;
+    right: -150px;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    height: 80px;
+
+    padding: 0 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 50;
+
+    background: rgba(5, 8, 22, 0.75);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
+}
+
+.logo {
+    font-size: 25px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+.logo span {
+    color: #7d78ff;
+
+    margin-left: 5px;
+
+    text-shadow:
+        0 0 15px #625cff;
+}
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #9da7c7;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+.nav-links button,
+.hero-button {
+    border: none;
+
+    padding: 13px 23px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #625cff,
+            #817cff
+        );
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 25px rgba(98,92,255,0.25);
+
+    transition: 0.3s;
+}
+
+.nav-links button:hover,
+.hero-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 35px rgba(98,92,255,0.4);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 80px 10%;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    background: #625cff;
+
+    opacity: 0.12;
+
+    filter: blur(130px);
+
+    top: 50px;
+
+    right: 15%;
+
+    border-radius: 50%;
+}
+
+.hero-content {
+    max-width: 650px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.eyebrow,
+.section-label {
+    color: #8e8aff;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.95;
+
+    margin: 25px 0;
+
+    letter-spacing: -4px;
+}
+
+.hero h1 span {
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #7d78ff,
+            #65d9ff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    max-width: 550px;
+
+    color: #aab3d1;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+.hero-button {
+    font-size: 16px;
+
+    padding: 16px 28px;
+}
+
+
+/* =========================
+   AERON CHARACTER AREA
+========================= */
+
+.hero-character {
+    width: 430px;
+
+    height: 500px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* =========================
+   AERON MAIN CHARACTER
+========================= */
+
+.character {
+    width: 250px;
+
+    height: 360px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 5;
+
+    animation:
+        heroFloat 4s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 0 15px rgba(98,92,255,0.8)
+        )
+        drop-shadow(
+            0 0 45px rgba(98,92,255,0.45)
+        );
+}
+
+
+/* =========================
+   AERON BODY
+========================= */
+
+.aeron-body {
+    width: 150px;
+
+    height: 260px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            160deg,
+            #202a52,
+            #0b1025 70%
+        );
+
+    border:
+        2px solid rgba(125,120,255,0.7);
+
+    border-radius:
+        70px 70px 35px 35px;
+
+    box-shadow:
+        inset 0 0 30px rgba(98,92,255,0.2),
+        0 0 35px rgba(98,92,255,0.25);
+}
+
+
+/* =========================
+   AERON HEAD
+========================= */
+
+.aeron-head {
+    position: absolute;
+
+    width: 105px;
+
+    height: 105px;
+
+    top: -55px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #354477,
+            #10162f 70%
+        );
+
+    border:
+        2px solid rgba(125,120,255,0.8);
+
+    box-shadow:
+        0 0 25px rgba(98,92,255,0.35);
+}
+
+
+/* =========================
+   AERON EYES
+========================= */
+
+.aeron-eye {
+    position: absolute;
+
+    width: 25px;
+
+    height: 8px;
+
+    top: 48px;
+
+    background: #65d9ff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px #65d9ff,
+        0 0 25px #65d9ff;
+
+    animation:
+        eyeGlow 2s ease-in-out infinite;
+}
+
+.left-eye {
+    left: 22px;
+
+    transform: rotate(8deg);
+}
+
+.right-eye {
+    right: 22px;
+
+    transform: rotate(-8deg);
+}
+
+@keyframes eyeGlow {
+
+    0%, 100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   AERON MASK
+========================= */
+
+.aeron-mask {
+    position: absolute;
+
+    top: 35px;
+
+    width: 100px;
+
+    height: 35px;
+
+    border-top:
+        2px solid rgba(101,217,255,0.6);
+
+    border-bottom:
+        2px solid rgba(101,217,255,0.2);
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   CHEST SYMBOL
+========================= */
+
+.aeron-chest {
+    position: absolute;
+
+    top: 70px;
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #65d9ff,
+            #625cff 45%,
+            transparent 70%
+        );
+
+    box-shadow:
+        0 0 25px rgba(101,217,255,0.7);
+
+    animation:
+        corePulse 2.5s ease-in-out infinite;
+}
+
+.aeron-chest span {
+    font-size: 28px;
+
+    color: white;
+
+    text-shadow:
+        0 0 15px #65d9ff;
+}
+
+@keyframes corePulse {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+}
+
+
+/* =========================
+   ENERGY CORE
+========================= */
+
+.aeron-core {
+    position: absolute;
+
+    width: 14px;
+
+    height: 100px;
+
+    top: 135px;
+
+    background:
+        linear-gradient(
+            transparent,
+            #65d9ff,
+            transparent
+        );
+
+    opacity: 0.45;
+
+    filter: blur(3px);
+}
+
+
+/* =========================
+   ARMS
+========================= */
+
+.aeron-arm {
+    position: absolute;
+
+    width: 35px;
+
+    height: 145px;
+
+    top: 75px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #27345e,
+            #0b1025
+        );
+
+    border:
+        2px solid rgba(125,120,255,0.6);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 15px rgba(98,92,255,0.2);
+}
+
+.left-arm {
+    left: -28px;
+
+    transform: rotate(10deg);
+}
+
+.right-arm {
+    right: -28px;
+
+    transform: rotate(-10deg);
+}
+
+
+/* =========================
+   AERON ENERGY AURA
+========================= */
+
+.aeron-energy {
+    position: absolute;
+
+    width: 230px;
+
+    height: 230px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(101,217,255,0.35);
+
+    box-shadow:
+        0 0 30px rgba(101,217,255,0.15),
+        inset 0 0 30px rgba(98,92,255,0.12);
+
+    animation:
+        aeronPulse 3s ease-in-out infinite;
+
+    z-index: -1;
+}
+
+@keyframes aeronPulse {
+
+    0%, 100% {
+        transform: scale(0.95);
+
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.08);
+
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   FLOATING ANIMATION
+========================= */
+
+@keyframes heroFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+
+/* =========================
+   ENERGY RINGS
+========================= */
+
+.energy-ring {
+    position: absolute;
+
+    border:
+        1px solid rgba(125,120,255,0.7);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 20px rgba(98,92,255,0.3),
+        inset 0 0 20px rgba(98,92,255,0.1);
+
+    animation:
+        rotate 10s linear infinite;
+}
+
+.ring-one {
+    width: 350px;
+
+    height: 350px;
+}
+
+.ring-two {
+    width: 280px;
+
+    height: 280px;
+
+    border-color:
+        rgba(101,217,255,0.6);
+
+    animation-direction: reverse;
+
+    animation-duration: 7s;
+}
+
+@keyframes rotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   CHARACTER NAME
+========================= */
+
+.character-name {
+    position: absolute;
+
+    bottom: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    z-index: 10;
+}
+
+.character-name strong {
+    letter-spacing: 5px;
+
+    font-size: 22px;
+}
+
+.character-name span {
+    color: #8993b4;
+
+    margin-top: 5px;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 120px 10%;
+
+    border-top:
+        1px solid rgba(255,255,255,0.07);
+}
+
+.section h2 {
+    font-size: 55px;
+
+    margin: 20px 0;
+
+    letter-spacing: -2px;
+}
+
+.section > p:not(.section-label) {
+    max-width: 750px;
+
+    color: #aab3d1;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   POWER CARDS
+========================= */
+
+.power-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    margin-top: 50px;
+}
+
+.power-card {
+    padding: 35px;
+
+    min-height: 240px;
+
+    border:
+        1px solid rgba(255,255,255,0.1);
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.06),
+            rgba(255,255,255,0.015)
+        );
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.4s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.power-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+
+    height: 120px;
+
+    background: #625cff;
+
+    opacity: 0.08;
+
+    filter: blur(40px);
+
+    top: -40px;
+
+    right: -40px;
+
+    border-radius: 50%;
+}
+
+.power-card:hover {
+    transform: translateY(-10px);
+
+    border-color:
+        rgba(125,120,255,0.7);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.25);
+}
+
+.power-icon {
+    font-size: 35px;
+
+    margin-bottom: 25px;
+
+    color: #7d78ff;
+
+    text-shadow:
+        0 0 20px #625cff;
+}
+
+.power-card h3 {
+    font-size: 24px;
+
+    margin-bottom: 15px;
+}
+
+.power-card p {
+    color: #aab3d1;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MISSION
+========================= */
+
+.mission {
+    min-height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 10%;
+
+    border-top:
+        1px solid rgba(255,255,255,0.07);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(98,92,255,0.1),
+            transparent 60%
+        );
+}
+
+.mission h2 {
+    font-size:
+        clamp(45px, 6vw, 80px);
+
+    max-width: 900px;
+
+    margin: 30px 0 50px;
+
+    letter-spacing: -3px;
+}
+
+.mission h2 span {
+    color: #7d78ff;
+
+    text-shadow:
+        0 0 30px rgba(98,92,255,0.5);
+}
+
+
+/* =========================
+   CHAT OVERLAY
+========================= */
+
+.chat-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,0.72);
+
+    display: none;
+
+    justify-content: flex-end;
+
+    align-items: flex-end;
+
+    padding: 25px;
+
+    z-index: 100;
+
+    backdrop-filter: blur(5px);
+}
+
+.chat-overlay.active {
+    display: flex;
+}
+
+
+/* =========================
+   CHAT WINDOW
+========================= */
+
+.chat-window {
+    width: 420px;
+
+    max-width: 100%;
+
+    height: 620px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #11182e,
+            #080d1d
+        );
+
+    border:
+        1px solid rgba(125,120,255,0.35);
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 100px rgba(0,0,0,0.7),
+        0 0 40px rgba(98,92,255,0.12);
+
+    display: flex;
+
+    flex-direction: column;
+
+    animation:
+        chatOpen 0.3s ease;
+}
+
+@keyframes chatOpen {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================
+   CHAT HEADER
+========================= */
+
+.chat-header {
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #191f40,
+            #11162e
+        );
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
+}
+
+.chat-header strong {
+    display: block;
+
+    letter-spacing: 2px;
+}
+
+.chat-header small {
+    color: #8993b4;
+
+    display: block;
+
+    margin-top: 5px;
+}
+
+.close-button {
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.close-button:hover {
+    color: #7d78ff;
+
+    transform:
+        rotate(90deg);
+}
+
+
+/* =========================
+   CHAT MESSAGES
+========================= */
+
+.chat-messages {
+    flex: 1;
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+}
+
+.message {
+    max-width: 82%;
+
+    padding: 13px 16px;
+
+    margin-bottom: 14px;
+
+    border-radius: 16px;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+
+    animation:
+        messageIn 0.25s ease;
+}
+
+@keyframes messageIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+.bot-message {
+    background:
+        linear-gradient(
+            135deg,
+            #202a4d,
+            #18213e
+        );
+
+    margin-right: auto;
+
+    border-bottom-left-radius: 5px;
+}
+
+.user-message {
+    background:
+        linear-gradient(
+            135deg,
+            #625cff,
+            #766fff
+        );
+
+    margin-left: auto;
+
+    border-bottom-right-radius: 5px;
+
+    box-shadow:
+        0 5px 20px rgba(98,92,255,0.2);
+}
+
+
+/* =========================
+   CHAT INPUT
+========================= */
+
+.chat-input-area {
+    display: flex;
+
+    padding: 15px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.1);
+
+    background:
+        rgba(5,8,22,0.5);
+}
+
+.chat-input-area input {
+    flex: 1;
+
+    padding: 14px;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    outline: none;
+
+    border-radius: 12px;
+
+    background: #080d1d;
+
+    color: white;
+
+    transition: 0.2s;
+}
+
+.chat-input-area input:focus {
+    border-color: #625cff;
+
+    box-shadow:
+        0 0 15px rgba(98,92,255,0.15);
+}
+
+.chat-input-area button {
+    margin-left: 10px;
+
+    width: 48px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #625cff,
+            #817cff
+        );
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.chat-input-area button:hover {
+    transform:
+        scale(1.05);
+}
+
+
+/* =========================
+   TYPING MESSAGE
+========================= */
+
+.typing {
+    opacity: 0.7;
+
+    font-style: italic;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 70px 6%;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .hero-character {
+        transform: scale(0.75);
+
+        margin-top: 10px;
+
+        height: 430px;
+    }
+
+    .power-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 80px 6%;
+    }
+
+    .section h2 {
+        font-size: 40px;
+    }
+
+    .chat-overlay {
+        padding: 10px;
+    }
+
+    .chat-window {
+        width: 100%;
+
+        height: 90vh;
+    }
+
+}
